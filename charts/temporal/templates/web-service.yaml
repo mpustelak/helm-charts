@@ -20,6 +20,7 @@ spec:
     - port: {{ .Values.web.service.port }}
       targetPort: http
       protocol: TCP
+      appProtocol: {{ .Values.web.service.appProtocol }}
       name: http
       {{- if hasKey .Values.web.service "nodePort" }}
       nodePort: {{ .Values.web.service.nodePort }}
